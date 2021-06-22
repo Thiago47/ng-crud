@@ -1,0 +1,20 @@
+<table class="table table-success table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Produto</th>
+      <th scope="col">Preço</th>
+      <th scope="col">Editar</th>
+      <th scope="col">Excluir</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of products">
+      <th scope="row">{{product.id}}</th>
+      <td>{{product.name}}</td>
+      <td>{{product.price | currency: 'BRL' : 'R$'}}</td>
+      <td><a routerLink="/products/update/{{product.id}}"><i class="bi bi-pencil-fill"></i></a></td>
+      <td><a class="red" routerLink="/products/delete/{{product.id}}"><i class="bi bi-x-octagon-fill"></i></a></td>
+    </tr>
+  </tbody>
+</table>

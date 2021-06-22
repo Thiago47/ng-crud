@@ -1,0 +1,22 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <!-- routerLink é para as rotas do app-routing.module.ts -->
+    <a class="navbar-brand" routerLink="/">
+      <img src="https://getbootstrap.com/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link active" aria-current="page" routerLink="/"><i class="bi bi-house-fill mx-2"></i>APLICAÇÃO CRUD</a>
+        <a class="nav-link active" aria-current="page" routerLink="/products" (click)='clearRota()'><i class="bi bi-cart-check-fill mx-2"></i>PRODUTOS</a>
+      </div>
+      <div class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Procurar..." [(ngModel)]="product.name" aria-label="Search">
+        <button class="btn btn-outline-success" type="button" (click)="searchProduct()">Pesquisa</button>
+      </div>
+    </div>
+
+  </div>
+</nav>

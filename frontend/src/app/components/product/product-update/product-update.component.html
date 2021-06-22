@@ -1,0 +1,27 @@
+<div class="card text-dark bg-info mb-3 m-4 text-center">
+  <div class="card-header">ALTERAR PRODUTO</div>
+  <div class="card-body">
+    <form>
+      <div class="mb-3">
+        <label class="form-label">Produto</label>
+        <input type="text" class="form-control" [(ngModel)]="product.name" name="name">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Preço</label>
+        <input type="text" class="form-control" prefix="R$ " mask="separator.2" thousandSeparator="," [(ngModel)]="product.price" name="price">
+      </div>
+    </form>
+  </div>
+  <div class="container mb-3">
+    <div class="row">
+      <div class="col">
+        <!-- click = navigateToProductCreate significa que eu estou chamando um método ao clicar-->
+        <button type="button" class="btn btn-success w-50" (click)="updateProduct()" >Salvar</button>
+      </div>
+      <div class="col">
+        <button type="button" class="btn btn-secondary w-50" (click)="cancel()" >Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+</div>
