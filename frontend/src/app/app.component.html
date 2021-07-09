@@ -1,6 +1,7 @@
-<app-header (mudouValor)="onMudouValor($event)"></app-header>
+<app-header *ngIf="mostrarMenu" (mudouValor)="onMudouValor($event)"></app-header>
 <!-- router-outlet é aonde vai ficar o componente referenciado nas rotas EXEMPLO: header-->
-<router-outlet></router-outlet>
+<router-outlet *ngIf="mostrarMenu" ></router-outlet>
+<app-login *ngIf="ocultarLogin" ></app-login>
+<app-footer *ngIf="mostrarMenu" ></app-footer>
 
-<app-footer></app-footer>
 

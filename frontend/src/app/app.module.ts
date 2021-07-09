@@ -17,6 +17,8 @@ import { ProductUpdateComponent } from './components/product/product-update/prod
 import { ProductDeleteComponent } from './components/product/product-delete/product-delete.component';
 //ngx-mask implementado mais fora de uso
 import { NgxMaskModule } from 'ngx-mask';
+import { LoginComponent } from './views/login/login.component';
+import { AuthService } from './views/login/auth.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import { NgxMaskModule } from 'ngx-mask';
     ProductCreateComponent,
     ProductReadComponent,
     ProductUpdateComponent,
-    ProductDeleteComponent
+    ProductDeleteComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +42,7 @@ import { NgxMaskModule } from 'ngx-mask';
       dropSpecialCharacters: true //ao salvar,não vai manter a máscara
     })
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

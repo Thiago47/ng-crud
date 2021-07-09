@@ -2,6 +2,7 @@ import { Product } from './../../product/product.model';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProductService } from '../../product/product.service';
+import Swal from 'sweetalert2';
 //importando a classe ProductReadComponent
 
 @Component({
@@ -55,6 +56,24 @@ export class HeaderComponent implements OnInit {
        this.mudouValor.emit(this.products)
       });
     }
+
+  }
+  refresh(){
+
+    Swal.fire({
+      title: 'Tem certeza?',
+      text: "Você não poderá reverter isso!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#d33',
+      cancelButtonColor: '#3085d6',
+      confirmButtonText: 'Sim',
+      cancelButtonText: 'Não'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.reload();
+      }
+    });
 
   }
 }
